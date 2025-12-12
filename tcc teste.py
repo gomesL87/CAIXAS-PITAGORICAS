@@ -5,7 +5,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import pandas as pd
 
 # --- CONFIGURAÇÃO DA PÁGINA ---
-st.set_page_config(page_title="Caixas Pitagóricas R3", layout="wide")
+st.set_page_config(page_title="Gerando Caixas Pitagóricas ", layout="wide")
 
 # --- FUNÇÕES LÓGICAS (Do seu código original) ---
 def gerar_caixa_pitagorica(m, n, k):
@@ -39,12 +39,12 @@ def vertices_paralelepipedo(a, b, c):
 
 # --- INTERFACE WEB (STREAMLIT) ---
 
-st.title("📦 Gerador de Caixas Pitagóricas em R³")
-st.markdown("Ferramenta de visualização e verificação de primitividade (PIBIC).")
+st.title("📦 Gerador de Caixas Pitagóricas ")
+st.markdown("Uma Visão Computacional Para Gerar Caixas Pitagóricas")
 
 # Barra Lateral para Entradas
 st.sidebar.header("Parâmetros de Entrada")
-m = st.sidebar.number_input("Valor de m", value=2, step=1)
+m = st.sidebar.number_input("Valor de m", value=1, step=1)
 n = st.sidebar.number_input("Valor de n", value=1, step=1)
 k = st.sidebar.number_input("Valor de k", value=1, step=1)
 
@@ -129,4 +129,5 @@ with col_dados:
         df = pd.DataFrame(st.session_state.historico)
         st.dataframe(df, use_container_width=True, hide_index=True)
     else:
+
         st.text("Nenhum cálculo realizado ainda.")
